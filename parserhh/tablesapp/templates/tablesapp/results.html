@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+ Results skills
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <!--table - таблица, tr-строка, td-столбец, th-заголовок-->
+                    <h4 class="text-center text-uppercase mb-4">statistics skills for a {{vac}}</h4>
+                    <ul>
+                       <table class="table">
+                        <tr>
+                            <th class="text-uppercase">Skill name</th>
+                            <th class="text-uppercase">Statistics</th>
+                        </tr>
+                         {% for item in skills %}
+                            <tr>
+                                <td>{{item.key_skills.name_skills}}</td>
+                                <td>{{item.statistics}}</td>
+                            </tr>
+                         {% endfor %}
+                        </table>
+                    </ul>
+                    </div>
+    </div>
+{% endblock %}
