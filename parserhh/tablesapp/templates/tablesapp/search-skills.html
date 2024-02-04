@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+ Results skills
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Want to know what skills are needed for your future job?</p>
+                        <div class="my-5">
+<!--action="{% url 'parser:results' %}" -->
+                            <form action="{% url 'parser:results' %}" method="post">
+                                <div class="form-group">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="submit" value="Search skills" class="btn btn-primary">
+                                </div>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+
